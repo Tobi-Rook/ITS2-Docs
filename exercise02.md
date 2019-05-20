@@ -256,9 +256,8 @@ System | IP-Adresse
 > Filtern Sie nun auf „telnet“. Wie ist der Benutzername und
   wie das Passwort?
 
-Username: fake
-
-Password: user
+- Username: fake
+- Password: user
 
 ---
 
@@ -369,3 +368,26 @@ Passwort?
   - Anwendung von `R1` -H> `R2` -H> `R3` erfolgreich (-> `myname` als Endpasswort)
 - An Anfang der Kette gehen und H auf Passwort anwenden
   - Ergibt `1vn6s`, d.h. `abcdefgh` ist gesuchtes Passwort
+
+---
+
+#### Übungsaufgabe 2.18
+> Wie viele potentielle Passwörter kann man aus 14 ASCII-Zeichen bilden (Angabe der Potenz reicht)?
+
+- 95^14 mögliche Passwörter der Länge 14
+
+> Wie viele potentielle Passwörter gibt es bei 7 ASCII-Zeichen?
+
+- 95^7
+
+> Wie viele potentielle Passwörter gibt es bei 7 ASCII-Zeichen, welches keine Kleinbuchstaben einsetzt?
+Berechnen Sie diesen Wert.
+
+- 26 Zeichen fallen weg -> 69^7
+- Entspricht 7.446.353.252.589 Passwörtern
+
+> Gegeben sei ein Rechner, der 10^9 Passwörter/s prüfen kann. Wie lange bräuchte ein solcher Rechner im Durchschnitt, um
+  ein mit LM Hash geschütztes Passwort der Länge 14 zu knacken?
+  
+- Pro Gruppe einen halben Passwort-Raum durchsuchen
+- Für 7-stellige Passwörter: (7,45 Bio / 2) Passwörter / 10^9 Passwörter / s) = 3723 s ≃ 62 Minuten
