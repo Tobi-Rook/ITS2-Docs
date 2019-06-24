@@ -139,3 +139,19 @@ Wo sind diese abgeblieben?
 
 - Verkürzter TLS-Handshake wird verwendet, da eine Sitzung wiederaufgenommen wird
 - `Finished` verborgen durch `Change Cipher Spec`
+
+---
+
+#### Übungsaufgabe 3.8
+> Geben Sie für die Interfaces der Router die ACLs an (Default Deny wenn ACL, sonst Default Permit)
+
+Host-I/F | Richtung | Aktion | Quell-IP | Ziel-IP | Protokoll | Quell-Port | Ziel-Port | Flags
+:---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
+`R1`-`eth2` | Outbound | Erlauben | `2.10.` | Keine Interne | TCP | `Any` | `Any` | `Any`
+`R1`-`eth2` | Inbound | Erlauben | Keine Interne | `2.10.` | TCP | `Any` | `Any` | `ACK`
+~~R3-eth1~~ | ~~Inbound~~ | ~~Verbieten~~ | ~~Nicht 1.0/24~~ | ~~1.1.~~ | ~~Alle~~ | ~~Any~~ | ~~Any~~ | ~~Any~~
+`R3`-`eth1` | Inbound | Erlauben | `2.0./24` | `1.2.` | TCP | `>1023` | `3333` | Egal
+`R3`-`eth0` | Inbound | Erlauben | `1.2.` | `2.0./24` | TCP | `3333` | `>1023` | `ACK`
+
+- Zu Aufgabe 4: Wird über *Default Deny* zu den Regeln von Aufgabe 3 abgedeckt
+- Ebenfalls sind die Angaben von Aufgabe 2 überflüssig
